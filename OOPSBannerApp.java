@@ -107,89 +107,30 @@ public class OOPSBannerApp8 {
 
     public static void main(String[] args) {
 
-        public class OOPSBANNERAPP{
+        String word = "OOPS";
+StringBuilder[] banner = new StringBuilder[7];
 
-    // Class to store character and its pattern
-    static class CharacterPatternMap {
-        char character;
-        String[] pattern;
-
-        CharacterPatternMap(char character, String[] pattern) {
-            this.character = character;
-            this.pattern = pattern;
+        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 7; i++)
+banner[i] = new StringBuilder();
         }
-    }
 
-    // Create pattern mappings
-    public static CharacterPatternMap[] createCharacterPatternMaps() {
+for (char ch : word.toCharArray()) {
+            String[] pattern =
+                    CharacterPatternMap.getPattern(ch).getPattern();
 
-        String[] O = {
-"  ***   ",
-" *   *  ",
-" *   *  ",
-" *   *  ",
-" *   *  ",
-" *   *  ",
-"  ***   "
-        };
+            String[] pattern = patternMap.get(ch);
 
-        String[] P = {
-"  **  ",
-" *    * ",
-" *    * ",
-" **   ",
-" **       ",
-" **       ",
-" **       "
-        };
-
-        String[] S = {
-"  **  ",
-" **       ",
-" **       ",
-"  **  ",
-"       ** ",
-" *    * ",
-"  **  "
-        };
-
-        return new CharacterPatternMap[] {
-                new CharacterPatternMap('O', O),
-                new CharacterPatternMap('P', P),
-                new CharacterPatternMap('S', S)
-        };
-    }
-
-    // Get pattern for character
-    public static String[] getCharacterPattern(char ch, CharacterPatternMap[] charMaps) {
-        for (CharacterPatternMap map : charMaps) {
-            if (map.character == ch) {
-                return map.pattern;
-            }
-        }
-        return null;
-    }
-// Print banner
-public static void printMessage(String message, CharacterPatternMap[] charMaps) {
-
-    int height = charMaps[0].pattern.length;
-
-    for (int row = 0; row < height; row++) {
-        for (int i = 0; i < message.length(); i++) {
-            String[] pattern = getCharacterPattern(message.charAt(i), charMaps);
-            if (pattern != null) {
-                System.out.print(pattern[row] + "   ");
-            }
-        }
-        System.out.println();
-    }
+for (int i = 0; i < 7; i++) {
+banner[i].append(pattern[i]).append(" ");
+@@ -84,4 +63,10 @@ public static void main(String[] args) {
+System.out.println(line.toString());
+}
 }
 
-// Main method
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    CharacterPatternMap[] charMaps = createCharacterPatternMaps();
-    String message = "OOPS";
-    printMessage(message, charMaps);
-}
+        initializePatterns();
+        renderBanner("OOPS");
+    }
 }
