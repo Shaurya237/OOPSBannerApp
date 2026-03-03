@@ -1,4 +1,3 @@
-
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
@@ -6,14 +5,29 @@ public class OOPSBannerApp {
     }
 
     public static void printBanner() {
-        System.out.println("==============================");
-        System.out.println("  OOO   OOO   PPPP   SSSS");
-        System.out.println(" O   O O   O  P   P S");
-        System.out.println(" O   O O   O  PPPP   SSS");
-        System.out.println(" O   O O   O  P         S");
-        System.out.println("  OOO   OOO   P     SSSS");
-        System.out.println("==============================");
+
+        String line1 = String.join(" ",
+                "***", "***", "****", "****");
+
+        String line2 = String.join(" ",
+                "*   *", "*   *", "*   *", "*");
+
+        String line3 = String.join(" ",
+                "*   *", "*   *", "****", "***");
+
+        String line4 = String.join(" ",
+                "*   *", "*   *", "*", "   *");
+
+        String line5 = String.join(" ",
+                "***", "***", "*", "****");
+
+        System.out.println("==================================");
+        System.out.println(line1);
+        System.out.println(line2);
+        System.out.println(line3);
+        System.out.println(line4);
+        System.out.println(line5);
+        System.out.println("==================================");
         System.out.println("Welcome to OOPS App");
     }
 }
-
